@@ -6,25 +6,10 @@ window.addEventListener("load", (event) => {
     alert("Pass");
   } else {
     alert("Not a Playstation. Tools will not work.");
+    alert(curentUserAgent);
   }
 });
 
-function uaCheck() {
-  alert(cuurentUserAgent);
-}
-
 function isUserAgentAllowed(userAgent) {
   return allowedAgents.some((agent) => userAgent.includes(agent));
-}
-
-function parseJS() {
-  alert("parser will go here later");
-}
-
-function payloadListener() {
-  if (isUserAgentAllowed(currentUserAgent)) {
-    alert("Try sending payload to port 9020.");
-  } else {
-    alert("You must be on Playstation to use this tool.");
-  }
 }
