@@ -6,7 +6,7 @@ window.addEventListener("load", (event) => {
     alert("Pass");
   } else {
     alert("Not a Playstation. Tools will not work.");
-    alert(curentUserAgent);
+    alert(currentUserAgent);
   }
 });
 
