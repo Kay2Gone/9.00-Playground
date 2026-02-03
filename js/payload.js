@@ -13,7 +13,7 @@ function checkUA() {
 if (isUserAgentAllowed(currentUserAgent)) {
     alert("Compatible! Proceeding...");
     setTimeout(checkUA, 3000);
-  //  startP();
+    startP();
   }
  else {
   alert("0")
