@@ -15,7 +15,7 @@ if (isUserAgentAllowed(currentUserAgent)) {
     startP();
   }
  else {
-  alert("1")
+  alert("1");
   return 1;
  }
 }
