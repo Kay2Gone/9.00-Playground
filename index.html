@@ -11,24 +11,26 @@
     <script src="js/payload.js"></script>
 
     <script>
-      (function () {
+(function () {
     var old = console.log;
     var logger = document.getElementById('log');
-    console.log = function (message) {
-        if (typeof message == 'object') {
-            logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '<br />';
+    console.log = function () {
+      for (var i = 0; i < arguments.length; i++) {
+        if (typeof arguments[i] == 'object') {
+            logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]) + '<br />';
         } else {
-            logger.innerHTML += message + '<br />';
+            logger.innerHTML += arguments[i] + '<br />';
         }
+      }
     }
-    })();
+})();
     </script>
   </head>
 
   <body>
 
     <div>
-      <p1 id="log">placeholder</p1>
+      <pre id="log"></pre>
     </div>
     
     <p class="pstatus">Status: Waiting..</p>
