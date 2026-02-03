@@ -21,5 +21,6 @@ if (isUserAgentAllowed(currentUserAgent)) {
 }
 
 function startP() {
-alert("test");
+ alert("test");
+ return 0;
 }
