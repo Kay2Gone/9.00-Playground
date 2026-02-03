@@ -10,7 +10,7 @@ window.addEventListener("load", (event) => {
 });
 
 function uaCheck() {
-  alert(navigator.userAgent);
+  alert(cuurentUserAgent);
 }
 
 function isUserAgentAllowed(userAgent) {
