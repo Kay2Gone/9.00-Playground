@@ -1,6 +1,6 @@
 window.addEventListener("load", (event) => {
- const currentUserAgent = navigator.userAgent;
- const allowedAgents = ["Safari", "Playstation 4", "9.00"];
+ currentUserAgent = navigator.userAgent;
+ allowedAgents = ["Playstation 4", "9.00"];
 
   if (isUserAgentAllowed(currentUserAgent)) {
 //
