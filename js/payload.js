@@ -12,11 +12,11 @@ window.addEventListener("load", (event) => {
 function checkUA() {
 if (isUserAgentAllowed(currentUserAgent)) {
     alert("Compatible! Proceeding...");
+    setTimeout(checkUA, 3000);
     startP();
   }
 }
 
 function startP() {
-setTimeout(startP, 2000);
 alert("test");
 }
