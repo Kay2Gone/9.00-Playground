@@ -1,37 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>PS4 9.00 Playground v0.1a</title>
-    <style>
-      form {
-        padding-top: 5px;
-      }
-    </style>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style></style>
+
     <script src="js/main.js"></script>
-    <script src="js/payload.js"></script>
-
-<script>
-    !function(o){console.old=console.log,console.log=function(){var n,e,t="";for(e=0;e<arguments.length;e++)t+='<span class="log-'+typeof(n=arguments[e])+'">',"object"==typeof n&&"object"==typeof JSON&&"function"==typeof JSON.stringify?t+=JSON.stringify(n):t+=n,t+="</span>&nbsp;";o.innerHTML+=t+"<br>",console.old.apply(void 0,arguments)}}
-    (document.body);
-</script>
-
   </head>
 
   <body>
+    <p class="psstatus">Status: Waiting..</p>
 
-    <div>
-      <p1 id="log"></p1>
+    <div class="boxwrap">
+      <div class="controls">
+        <div class="controls-buttons">
+        <!--  <button onclick="webkitStart()">Start Webkit</button>-->
+          <button onclick="writeMem()">Write Memory</button>
+          <button onclick="executeJS()">Execute javascript</button>
+          <button onclick="loadPayload()">Load Payload</button>
+        </div>
+
+        <div class="controls-inputs">
+          <input id="memAddr" type="text" placeholder="Memory Address (0x0)" />
+          <input  id="jsInput" type="text" placeholder="javascript..." />
+          <select id="payloadSelect">
+            <option value="payloads/ps4debug.bin">HEN</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="center">
+        <textarea
+          readonly="true"
+          class="boxout"
+          rows="10"
+          cols="30"
+          locked="true"
+          placeholder="Waiting for output..."
+        ></textarea>
+      <!--- <textarea class="boxpld" rows="10" cols="30" locked="true" placeholder="Create a Payload... (XML or Javascript)"></textarea> -->
+      </div>
     </div>
-    
-    <p class="pstatus">Status: Waiting..</p>
-    <input type="text" placeholder="Javascript...">
-    <button onclick="console.log('test')">Execute</button>
-    <form>
-    <select>
-      <option value="hen">HEN</option>
-      <option value="listener">Payload Listener</option>
-    </select>
-    <button onclick="">Attempt</button>
-    </form>
+
+    <script src="js/out.js"></script>
+    <script src="js/exploit.js"></script>
   </body>
 </html>

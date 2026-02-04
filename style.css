@@ -1,0 +1,171 @@
+.boxwrap {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  width: 820px;
+  max-width: calc(100% - 24px);
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 520px;
+  width: 100%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/*.center::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 100%;
+  background: transparent;
+}
+
+  boxpld {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(50% - 1px);
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 13px;
+  background: lightgrey;
+} */
+
+.boxout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 0px);
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 13px;
+  background: rgb(158, 158, 158);
+}
+
+/* controls pinned to the top of the viewport */
+.controls {
+  position: absolute; /* positioned relative to .boxwrap */
+  bottom: calc(100% + 4px); /* bring controls closer to the box */
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 4px 8px; /* row-gap column-gap */
+  align-items: start;
+  z-index: 10000;
+  padding: 6px 8px;
+  background: transparent; /* allow each row to show its own background if needed */
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.controls-bottom {
+  position: absolute; /* positioned relative to .boxwrap */
+  bottom: calc(100% + 2px); /* outside and above the box with 4px gap */
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 10000;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  box-sizing: border-box;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* buttons row and inputs row when stacked above the box (alignment only) */
+.controls-buttons,
+.controls-inputs {
+  display: contents; /* let children participate directly in the grid */
+}
+
+/* make buttons and inputs fill their grid column */
+.controls button,
+.controls input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .controls {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 6px;
+  }
+}
+
+/* layout for each input/button pair */
+.control-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.control-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* small extra gap between controls and the fixed box if they overlap */
+@media (max-width: 900px) {
+  .controls-top {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 6px;
+  }
+  .controls-bottom {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px 6px;
+  }
+}
+
+.psstatus {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  margin: 0;
+  padding: 4px 8px;
+  background: rgba(25, 31, 52, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  z-index: 9999;
+  font-size: 13px;
+}
+
+.center ~ input,
+.center ~ button,
+.center + .controls {
+  margin-top: 8px;
+}
+
+.controls .controls-right {
+  padding-bottom: 6px;
+}
