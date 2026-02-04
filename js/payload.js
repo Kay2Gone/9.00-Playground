@@ -1,12 +1,6 @@
 window.addEventListener("load", (event) => {
  currentUserAgent = navigator.userAgent;
  allowedAgents = ["Playstation 4", "9.00"];
-
-  if (isUserAgentAllowed(currentUserAgent)) {
-//
-  } else {
-//
-  }
 });
 
 function checkUA() {
