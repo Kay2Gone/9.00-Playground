@@ -12,9 +12,11 @@ window.addEventListener("load", (event) => {
 function checkUA() {
 if (isUserAgentAllowed(currentUserAgent)) {
     alert("Compatible! Proceeding...");
+    console.log("Pass");
     startP();
   }
  else {
+  alert("no");
   console.log("Not Compatible. Haulting..");
   return 1;
  }
