@@ -26,3 +26,15 @@ function startP() {
  alert("test");
  return 0;
 }
+
+function loadPayload() {
+console.log("Attempting...");
+if (isUserAgentAllowed(currentUserAgent)) {
+console.log("pass");
+}
+else {
+console.log("fail. not playstation");
+return 1;
+}
+ 
+}
