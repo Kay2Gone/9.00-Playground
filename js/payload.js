@@ -15,7 +15,7 @@ if (isUserAgentAllowed(currentUserAgent)) {
     startP();
   }
  else {
-  alert("1");
+  console.log("Not Compatible. Haulting..");
   return 1;
  }
 }
