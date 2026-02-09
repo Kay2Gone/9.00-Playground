@@ -20,33 +20,6 @@
   overflow: hidden;
 }
 
-/*.center::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: calc(50% - 1px);
-  width: 2px;
-  height: 100%;
-  background: transparent;
-}
-
-  boxpld {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: calc(50% - 1px);
-  box-sizing: border-box;
-  padding: 12px;
-  margin: 0;
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  font-size: 13px;
-  background: lightgrey;
-} */
-
 .boxout {
   position: absolute;
   top: 0;
@@ -64,26 +37,25 @@
   background: rgb(158, 158, 158);
 }
 
-/* controls pinned to the top of the viewport */
 .controls {
-  position: absolute; /* positioned relative to .boxwrap */
-  bottom: calc(100% + 4px); /* bring controls closer to the box */
+  position: absolute; 
+  bottom: calc(100% + 4px); 
   left: 0;
   right: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(120px, 1fr));
-  gap: 4px 8px; /* row-gap column-gap */
+  gap: 4px 8px;
   align-items: start;
   z-index: 10000;
   padding: 6px 8px;
-  background: transparent; /* allow each row to show its own background if needed */
+  background: transparent; 
   box-sizing: border-box;
   max-width: 100%;
 }
 
 .controls-bottom {
-  position: absolute; /* positioned relative to .boxwrap */
-  bottom: calc(100% + 2px); /* outside and above the box with 4px gap */
+  position: absolute; 
+  bottom: calc(100% + 2px); 
   left: 0;
   right: 0;
   display: flex;
@@ -99,13 +71,11 @@
   justify-content: center;
 }
 
-/* buttons row and inputs row when stacked above the box (alignment only) */
 .controls-buttons,
 .controls-inputs {
-  display: contents; /* let children participate directly in the grid */
+  display: contents;
 }
 
-/* make buttons and inputs fill their grid column */
 .controls button,
 .controls input {
   width: 100%;
@@ -120,7 +90,6 @@
   }
 }
 
-/* layout for each input/button pair */
 .control-row {
   display: flex;
   gap: 8px;
@@ -133,7 +102,6 @@
   align-items: center;
 }
 
-/* small extra gap between controls and the fixed box if they overlap */
 @media (max-width: 900px) {
   .controls-top {
     left: 50%;
@@ -169,3 +137,4 @@
 .controls .controls-right {
   padding-bottom: 6px;
 }
+
